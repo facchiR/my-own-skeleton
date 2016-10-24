@@ -1,0 +1,15 @@
+{
+    "result": {
+        "dayTot": [{
+                "date": "2016-10-19T15:07:48.407Z",
+                "totHours": 8,
+                "presHours": 8,
+                "absHours":0
+                }, {
+                "date": "2016-10-19T15:08:06.096Z",
+                "totHours": 8,
+                "presHours": 0,
+                "absHours":8
+                }]
+    }
+}

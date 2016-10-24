@@ -1,4 +1,4 @@
-app.controller('AppController', function(){
+app.controller('AppController',['swInfo', function(swInfo){
     
    var vm=this;
    vm.nav = [
@@ -8,8 +8,9 @@ app.controller('AppController', function(){
        },
        {
            url:'#/register',
-           title:'Register'
+           title:'Registro'
        }
    ];
+   vm.ver = swInfo.version;
    vm.today = new Date();
-});
+}]);
