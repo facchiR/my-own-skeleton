@@ -1,1 +1,109 @@
-<h1>Registro presenze</h1>
+<h1 class="text-center">
+    Registro presenze/assenze
+</h1>
+<div class="well-sm">
+    <div class="col-md-12 col-sm-12">
+        <table class="table table-bordered">
+            <thead>
+                <th>
+                    Data                
+                </th>
+                <th>
+                    Ore di lezione
+                </th>
+                <th>
+                    Ore di presenza
+                </th>
+                <th>
+                    Ore di assenza
+                </th>
+                <th>
+                    Correggi
+                </th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="day in dayTot">
+                    <td>
+                       {{day.date | date : 'dd/MM/yyyy'}} 
+                    </td>
+                    <td>
+                        {{day.totHours }} 
+                    </td>
+                    <td>
+                        {{day.presHours}}
+                    </td>
+                    <td>
+                        {{day.absHours}}
+                    </td> 
+                    <td>
+                        <button class="btn btn-sm btn-info"  ng-click="showDay($index)">Modifica</button>
+                        <button class="btn btn-sm btn-danger" ng-click="deleteDay($index)">Cancella</button>
+                    </td>
+                </tr>
+               <!--<tr>
+                    <td>
+                        24/10/2016
+                    </td>
+                    <td>
+                        8
+                    </td>
+                    <td>
+                        8
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>-->
+                <tr class="info text-capitalize">
+                    <td>
+                        {{dayTot.length}} giorni totali di lezione
+                    </td>
+                    <td>
+                        ore totali di lezione
+                    </td>
+                    <td>
+                        ore totali di presenza
+                    </td>
+                    <td>
+                        ore totali di assenza
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+<div class="col-md-12 col-sm-12 text-center">
+    <h3>
+        Inserisci qui le tue presenze!
+    </h3>
+    <form class="form-inline">
+        <div class="form-group">
+            <label> Data
+                <input type="date" class="form-control" ng-model="day.date" placeholder="inserire data">     
+            </label>
+        </div>
+        <div class="form-group">
+            <label> Ore di lezione
+                <input type="number" min="4" max="8" class="form-control" ng-model="day.totHours" placeholder="inserire ore totali">     
+            </label>
+        </div>
+        <div class="form-group">
+            <label> Ore di presenza
+                <input type="number" min="0" max="8" class="form-control" ng-model="day.presHours" placeholder="inserire ore presenza">     
+            </label>
+        </div>
+        <div class="col-sm-12 text-center">
+        <button ng-click="saveDay(day.index)" class="btn btn-info">Salva</button>
+        <button ng-click="resetDay()" class="btn btn-primary">Nuovo</button>
+        </div>
+
+    </form>
+</div>

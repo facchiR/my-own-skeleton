@@ -1,5 +1,9 @@
-<ul>
-    <li ng-repeat="item in items">
-       <a ng-href="{{ item.url }}">{{ item.title }}</a>
-    </li>
-</ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-repeat="item in items" class="">
+               <a ng-href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

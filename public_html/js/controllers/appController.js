@@ -11,4 +11,5 @@ app.controller('AppController', function(){
            title:'Register'
        }
    ];
+   vm.today = new Date();
 });
